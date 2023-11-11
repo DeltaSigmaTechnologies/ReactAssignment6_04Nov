@@ -1,43 +1,62 @@
-import React from 'react'
 import { DataGrid } from '@mui/x-data-grid';
 import { Box,Stack} from '@mui/material';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
+import axios from 'axios';
+import { useState } from 'react';
 
 function ViewStudents() {
   const columns = [
     { field: 'id', headerName: 'ID', width: 90 },
     {
-      field: 'firstName',
-      headerName: 'First name',
+      field: 'full_name',
+      headerName: 'First Name',
       width: 150,
-      editable: true,
+      
     },
     {
-      field: 'lastName',
-      headerName: 'Last name',
+      field: 'roll_no',
+      headerName: 'Roll No',
       width: 150,
-      editable: true,
+      
     },
     {
-      field: 'age',
-      headerName: 'Age',
-      type: 'number',
-      width: 110,
-      editable: true,
+      field: 'email_id',
+      headerName: 'Email Id', 
+      width: 220,
+     
     },
-   
+    {
+      field: 'contact',
+      headerName: 'Contact', 
+      width: 220,
+     
+    },
+    {
+      field: 'department',
+      headerName: 'Department', 
+      width: 220,
+     
+    },
+    {
+      field: 'college',
+      headerName: 'College', 
+      width: 220,
+     
+    },
   ];
 
-  const rows = [
-    { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-    { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-  ];
-    
-  
 
     
-  
+  const [rows,setRows]=useState([]);
+
+    axios.get("https://students.dstinnovate.com/students")
+
+     .then((res)=>{
+      setRows(res.data)
+
+})
+  /* axios.get().then((res)=>{}).catch() */
  
   return (
     <>
@@ -66,7 +85,7 @@ function ViewStudents() {
             },
           },
         }}
-        pageSizeOptions={[5]}
+        pageSizeOptions={[5,10,20]}
         checkboxSelection
         disableRowSelectionOnClick
       />
