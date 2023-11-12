@@ -41,8 +41,8 @@ export default function DashboardAppPage() {
           </Grid>
 
           <Grid item xs={12} md={6} lg={12}>
-<ViewStudents />
-            </Grid>
+            <ViewStudents />
+          </Grid>
 
         </Grid>
       </Container>
