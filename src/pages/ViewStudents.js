@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 function ViewStudents() {
   const columns = [
-    { field: 'id', headerName: 'ID', width: 90 },
+    { field: 'id', headerName: 'ID', width: 50 },
     {
       field: 'full_name',
       headerName: 'First Name',
@@ -29,19 +29,19 @@ function ViewStudents() {
     {
       field: 'contact',
       headerName: 'Contact', 
-      width: 220,
+      width: 120,
      
     },
     {
       field: 'department',
       headerName: 'Department', 
-      width: 220,
+      width: 100,
      
     },
     {
       field: 'college',
       headerName: 'College', 
-      width: 220,
+      width: 100,
      
     },
   ];
