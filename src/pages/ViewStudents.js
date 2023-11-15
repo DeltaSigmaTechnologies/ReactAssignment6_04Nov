@@ -34,7 +34,7 @@ function ViewStudents() {
       editable: false,
     },
     {
-      field: 'prereq',
+      field: 'contact',
       headerName: 'PreRequisites',
       width: 190,
       editable: false,
@@ -54,15 +54,15 @@ function ViewStudents() {
     }
   ];
   
-  const rows = [
-    { id: 1, full_name: 'Abdul Raoof', roll_no: '160422733011', department: 'CSE' ,college:'MJCET', prereq:'HTML,CSS,JS,Python' ,cgpa:'9.82',email_id:'abcd@hotmail.com'},
-];
-   
-  // const [rows, setRows] = useState([]);
-  // axios.get("https://students.dstinnovate.com/students")
-  // .then((res)=>{
-  //       setRows(res.data)
-  // })
+//   const rows = [
+//     { id: 1, full_name: 'Abdul Raoof', roll_no: '160422733011', department: 'CSE' ,college:'MJCET', prereq:'HTML,CSS,JS,Python' ,cgpa:'9.82',email_id:'abcd@hotmail.com'},
+// ];
+   const [rows, setRows] = useState([]);
+  axios.get("https://students.dstinnovate.com/students")
+  .then((res)=>{
+        setRows(res.data)
+  })
+  
 
   return (
     <>

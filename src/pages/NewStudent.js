@@ -18,7 +18,7 @@ const NewStudent = () => {
     return (
   
       <>
-       <h1>New Student</h1>
+       <h1>Register- New Student</h1>
   
      
       <Box sx={{ width: '50%', marginTop:"2%", marginLeft:'23%', marginBottom:'5%'}}>
